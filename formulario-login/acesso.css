@@ -1,0 +1,119 @@
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Linear+B&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Estilos gerais para o corpo da página */
+body {
+    height: 100vh; /* Define a altura para ocupar 100% da altura da janela */
+    margin: 0; /* Remove margens padrão */
+    background: linear-gradient(to bottom, #111111, #212529); /* Fundo gradiente */
+    background-size: cover; /* Cobrir toda a tela */
+    display: flex; /* Exibe elementos como flexbox */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+/* Estilos para o contêiner principal do formulário */
+.container-form {
+    margin: auto; /* Centraliza o contêiner horizontalmente */
+    width: 320px;
+    height: 568px;
+    background: linear-gradient(to top, #111111, #212529); /* Fundo gradiente */
+    background-size: cover; /* Cobrir toda a tela */
+    border-radius: 25px; /* Borda arredondada */
+    border: 2px solid rgb(47, 231, 255); /* Borda com cor */
+    box-shadow: 0px 0px 15px 5px aquamarine; /* Sombra */
+}
+
+/* Estilos para o cabeçalho (título) */
+h1 {
+    color: aquamarine; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    font-family: 'Noto Sans Linear B', sans-serif; /* Fonte personalizada */
+    font-size: 4em; /* Tamanho da fonte */
+    font-weight: 700; /* Espessura da fonte */
+    letter-spacing: 0.2em; /* Espaçamento entre letras */
+    text-shadow: 0px 0px 5px rgb(47, 231, 255); /* Sombra de texto */
+}
+
+/* Estilos para o contêiner das entradas (labels e inputs) */
+.container-entradas {
+    display: flex; /* Exibe elementos como flexbox */
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    padding-top: 20px;
+}
+
+/* Estilos para as labels */
+label {
+    margin-right: 180px; /* Espaço à direita para alinhar com os inputs */
+    margin-bottom: 10px; /* Espaço inferior entre as labels */
+    color: rgb(47, 231, 255); /* Cor do texto */
+    font-family: 'Open Sans', sans-serif; /* Fonte personalizada */
+}
+
+#password {
+    margin-left: -7px;
+}
+
+/* Estilos para os inputs */
+input {
+    width: 240px;
+    height: 30px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background-color: #121313;
+    border-style: ridge;
+    border-color: aquamarine;
+    color: rgb(47, 231, 255);
+    font-size: 20px;
+}
+
+/* Efeito de escala quando o mouse está sobre os inputs */
+input:hover {
+    transform: scale(1.02);
+    border: 1px ridge #011b18;
+    box-shadow: 0px 0px 10px 3px rgb(127, 255, 249);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilos para inputs em foco (quando selecionados) */
+input:focus {
+    border-color: aquamarine; /* Cor da borda em foco */
+    outline: none;
+    border: 1px ridge #011b18;
+    box-shadow: 0px 0px 10px 3px rgb(127, 255, 249);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Estilos para o botão */
+button {
+    margin-top: 30px;
+    width: 245px;
+    height: 60px;
+    border-radius: 350px;
+    background: linear-gradient(to left, aquamarine, rgb(47, 231, 255));
+    background-size: cover;
+    color: rgb(0, 1, 10);
+    border: 1px ridge #011b18;
+    box-shadow: 0px 0px 10px 3px rgb(127, 255, 249);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bolder;
+    font-size: 22px;
+}
+
+/* Efeito de escala e mudança de cor de fundo quando o mouse está sobre o botão */
+button:hover {
+    background: linear-gradient(to left, rgb(47, 231, 255), aquamarine);
+    transform: scale(1.05);
+}
+
+/* Estilos para o botão em foco (quando selecionado) */
+button:focus {
+    outline: 1px solid #111111; /* Cor do contorno em foco */
+}
+
+::selection {
+    background-color: aquamarine;
+    color: #111111;
+}

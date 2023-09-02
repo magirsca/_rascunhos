@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIA</title>
+    <link rel="stylesheet" href="acesso.css"> <!-- Inclui o arquivo CSS externo -->
+</head>
+<body>
+    <div class="container-form">
+        <h1>GAIA</h1> <!-- Título da página -->
+
+        <div class="container-entradas">
+            <label for="usuario">Usuário</label> <!-- Rótulo para o campo de usuário -->
+            <input type="text" id="usuario" name="usuario"> <!-- Campo de entrada de texto para o usuário -->
+
+            <label for="senha" id="password">Senha</label> <!-- Rótulo para o campo de senha -->
+            <input type="password" id="senha" name="senha"> <!-- Campo de entrada de senha -->
+
+            <button onclick="redirecionarParaPagina()">Entrar</button> <!-- Botão de entrada com ação de redirecionamento -->
+        </div>
+    </div>
+
+    <script>
+        function redirecionarParaPagina() {
+            window.location.href = "logado.html"; // Redireciona para a página "logado.html" ao clicar no botão
+        }
+    </script>
+</body>
+</html>
