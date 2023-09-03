@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Lista de Tarefas</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="alert alert-info">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/add_task" class="form-inline mt-3">
+            {{ form.hidden_tag() }}
+            <div class="form-group mr-2">
+                {{ form.content.label() }}
+                {{ form.content(class="form-control", placeholder="Adicionar tarefa") }}
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>Tarefa</th>
+                        <th>Data e Hora de Criação</th> <!-- Adicionar coluna para mostrar a data e a hora -->
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for task in tasks %}
+                        <tr>
+                            <td>{{ task.content }}</td>
+                            <td>{{ task.created_at.strftime('%Y-%m-%d %H:%M:%S') }}</td> <!-- Mostrar a data e a hora formatadas -->
+                            <td>
+                                <a href="{{ url_for('update_task', id=task.id) }}" class="btn btn-sm btn-warning">Editar</a>
+                                <a href="{{ url_for('delete_task', id=task.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Tem certeza de que deseja excluir esta tarefa?')">Excluir</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+</body>
+</html>
